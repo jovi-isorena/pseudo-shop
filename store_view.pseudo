@@ -1,5 +1,11 @@
-# Displays product listings
-
-# Placeholder function:
-# function display_products()
-
+function add_product(name, width, height, length, weight, color, brand):
+    product = {
+        name: name,
+        width: width,
+        height: height,
+        length: length,
+        weight: weight,
+        color: color,
+        brand: brand
+    }
+    append product to product_list
