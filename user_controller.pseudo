@@ -4,3 +4,14 @@
 # function create_user(name, email, password)
 # function login_user(email, password)
 
+# Function: create_user
+# Description: Registers a new user account.
+# Parameters:
+#   name: The user's full name.
+#   email: The user's unique email address (will serve as their username).
+#   password: The user's chosen password.
+# Returns: TRUE if registration is successful, FALSE if registration fails.
+function create_user(name, email, password):
+    # Logic to check for existing email and add new user will go here
+    print "Attempting to create user: " + email # Temporary placeholder for this commit
+    return TRUE # Assume success for now
