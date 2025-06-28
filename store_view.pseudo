@@ -5,29 +5,20 @@
 function filter_products(filters):
     filtered_products_list = []
 
-    # Access the global product_list from product_model.pseudo
+    # Assume product_list is globally accessible from product_model.pseudo
     all_products = product_list 
 
     for each product in all_products:
-        is_product_match = TRUE # Assume product matches initially
+        is_product_match = TRUE # Assume product matches initially, then check filters
 
-        for each attribute_name, filter_value in filters:
-            # Check if the product has the specified attribute
-            if not product has_property attribute_name:
-                # If the product doesn't even have the attribute, it cannot match this filter.
-                is_product_match = FALSE
-                break # Exit inner loop as this product already failed a filter
-            
-            # Check if the product's attribute value matches the filter value
-            if product.attribute_name is not equal to filter_value:
-                is_product_match = FALSE
-                break # Exit inner loop as this product does not match
-            
-        # If the product matched all filters, add it to the result list
+        # Detailed filter checking loop will go here in the next commit
+
+        # If the product still matches after all (future) filter checks, add it
         if is_product_match is TRUE:
             add product to filtered_products_list
-        
+
     return filtered_products_list
 
-# function display_products()
+function display_products()
+
 
