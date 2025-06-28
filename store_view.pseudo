@@ -1,7 +1,3 @@
-
-# In-memory product list
-product_list ← empty list
-
 # Product structure:
 # {
 #     name: string,
