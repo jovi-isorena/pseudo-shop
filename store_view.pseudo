@@ -1,3 +1,20 @@
+
+# In-memory product list
+product_list ← empty list
+
+# Product structure:
+# {
+#     name: string,
+#     width: number,
+#     height: number,
+#     length: number,
+#     weight: number,
+#     color: string,
+#     brand: string
+# }
+
+# Adds a product to the list with basic validation
+# Also prints all available products after adding
 function add_product(name, width, height, length, weight, color, brand):
     if name is empty or brand is empty:
         print "Error: Product must have a name and brand."
@@ -17,3 +34,10 @@ function add_product(name, width, height, length, weight, color, brand):
         brand: brand
     }
     append product to product_list
+
+    # Show all available products after adding
+    print "Product successfully added!"
+    print "Available products:"
+
+    for each item in product_list:
+        print "-" + item.name + item.brand"
