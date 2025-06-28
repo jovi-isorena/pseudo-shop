@@ -1,4 +1,12 @@
 function add_product(name, width, height, length, weight, color, brand):
+    if name is empty or brand is empty:
+        print "Error: Product must have a name and brand."
+        return
+
+    if width ≤ 0 or height ≤ 0 or length ≤ 0 or weight ≤ 0:
+        print "Error: Dimensions and weight must be greater than zero."
+        return
+
     product = {
         name: name,
         width: width,
