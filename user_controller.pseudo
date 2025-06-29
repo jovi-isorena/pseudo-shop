@@ -4,3 +4,53 @@
 # function create_user(name, email, password)
 # function login_user(email, password)
 
+user_data_list = []
+# Function: create_user
+# Description: Registers a new user account.
+# Parameters:
+#   name: The user's full name.
+#   email: The user's unique email address (will serve as their username).
+#   password: The user's chosen password.
+# Returns: TRUE if registration is successful, FALSE if registration fails (e.g., email already exists).
+function create_user(name, email, password):
+    # First, check if a user with the provided email already exists.
+    # Email addresses are assumed to be unique identifiers for users.
+    for each user in user_data_list:
+        if user.email is equal to email:
+            print "Error: Registration failed. A user with this email already exists."
+            return FALSE # Indicate failure due to duplicate email
+
+    # If email is unique, create a new user object.
+    new_user = {
+        name: name,
+        email: email,
+        password: password # Storing plain text for pseudocode simplicity; hash in real app!
+    }
+
+    # Add the newly created user to our in-memory list.
+    add new_user to user_data_list
+    print "Success: User '" + name + "' registered successfully."
+    return TRUE # Indicate successful registration
+
+    # Function: login_user
+# Description: Authenticates a user based on their email and password.
+# Parameters:
+#   email: The user's email address.
+#   password: The user's password.
+# Returns: TRUE if login is successful, FALSE if login fails (e.g., invalid credentials).
+function login_user(email, password):
+    # Iterate through the list of registered users to find a match.
+    for each user in user_data_list:
+        # Check if the user's email matches the provided email.
+        if user.email is equal to email:
+            # If email matches, now verify the password.
+            if user.password is equal to password:
+                print "Success: User '" + user.name + "' logged in successfully."
+                return TRUE # Indicate successful login
+            else:
+                print "Login Failed: Incorrect password for user '" + email + "'."
+                return FALSE # Indicate password mismatch
+
+    # If the loop completes without finding a matching email, the user does not exist.
+    print "Login Failed: User with email '" + email + "' not found."
+    return FALSE # Indicate user not found
