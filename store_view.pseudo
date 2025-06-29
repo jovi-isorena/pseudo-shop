@@ -1,39 +1,6 @@
-# Product structure:
-# {
-#     name: string,
-#     width: number,
-#     height: number,
-#     length: number,
-#     weight: number,
-#     color: string,
-#     brand: string
-# }
+print "Available products:"
 
-# Adds a product to the list with basic validation
-# Also prints all available products after adding
-function add_product(name, width, height, length, weight, color, brand):
-    if name is empty or brand is empty:
-        print "Error: Product must have a name and brand."
-        return
+product_list = product_model.get_products()
 
-    if width ≤ 0 or height ≤ 0 or length ≤ 0 or weight ≤ 0:
-        print "Error: Dimensions and weight must be greater than zero."
-        return
-
-    product = {
-        name: name,
-        width: width,
-        height: height,
-        length: length,
-        weight: weight,
-        color: color,
-        brand: brand
-    }
-    append product to product_list
-
-    # Show all available products after adding
-    print "Product successfully added!"
-    print "Available products:"
-
-    for each item in product_list:
-        print "-" + item.name + item.brand"
+for each item in product_list:
+    print "-" + item.name + item.brand"
