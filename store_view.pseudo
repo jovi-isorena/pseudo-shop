@@ -1,5 +1,6 @@
-# Displays product listings
+print "Available products:"
 
-# Placeholder function:
-# function display_products()
+product_list = product_model.get_products()
 
+for each item in product_list:
+    print "-" + item.name + item.brand"
