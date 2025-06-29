@@ -1,4 +1,12 @@
-# Displays product listings
+# Main entry point
+
+# This file ties together all components of the pseudo-shop
+# Simulates basic application flow
+
+print "Welcome to the Pseudo Shop!"
+
+# Display list of products from the storefront
+call display_products()
 
 # Function to show all products with selected attributes
 function display_products():
