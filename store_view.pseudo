@@ -1,8 +1,5 @@
 # Main entry point
 
-# This file ties together all components of the pseudo-shop
-# Simulates basic application flow
-
 print "Welcome to the Pseudo Shop!"
 
 # Prompt user to login or register
@@ -60,3 +57,30 @@ function display_products():
         print "Color:", product.color
         print "Brand:", product.brand
         print ""  # Spacer between products
+        
+function filter_products(filters):
+    filtered_products_list = []
+
+    # Assume product_list is globally accessible from product_model.pseudo
+    all_products = product_list 
+
+    for each product in all_products:
+        is_product_match = TRUE # Assume product matches initially
+
+        for each attribute_name, filter_value in filters:
+            # Check if the product has the specified attribute
+            if not product has_property attribute_name:
+                # If the product doesn't even have the attribute, it cannot match this filter.
+                is_product_match = FALSE
+                break # Exit inner loop as this product already failed a filter
+
+            # Check if the product's attribute value matches the filter value
+            if product.attribute_name is not equal to filter_value:
+                is_product_match = FALSE
+                break # Exit inner loop as this product does not match
+
+        # If the product matched all filters, add it to the result list
+        if is_product_match is TRUE:
+            add product to filtered_products_list
+
+    return filtered_products_list
