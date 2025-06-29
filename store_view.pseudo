@@ -1,5 +1,32 @@
 # Displays product listings
 
-# Placeholder function:
-# function display_products()
+# Function to show all products with selected attributes
+function display_products():
+    # List of product dictionaries with name, price, and attributes
+    products = [
+        {
+            product_name: "Pseudo Phone",
+            product_price: 999,
+            product_attributes: ["new", "hot", "electronics"]
+        },
+        {
+            product_name: "Pseudo Shirt",
+            product_price: 29,
+            product_attributes: ["clothing", "sale"]
+        },
+        {
+            product_name: "Pseudo Mug",
+            product_price: 15,
+            product_attributes: ["home", "hot"]
+        }
+    ]
 
+    print "Available Products:"
+
+    for product in products:
+        print "Name:", product.name
+        print "Dimensions (W x H x L):", product.width, "x", product.height, "x", product.length
+        print "Weight:", product.weight, "kg"
+        print "Color:", product.color
+        print "Brand:", product.brand
+        print ""  # Spacer between products
