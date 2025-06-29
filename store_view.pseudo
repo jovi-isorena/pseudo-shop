@@ -49,23 +49,7 @@ else:
 # Function to show all products with selected attributes
 function display_products():
     # List of product dictionaries with name, price, and attributes
-    products = [
-        {
-            product_name: "Pseudo Phone",
-            product_price: 999,
-            product_attributes: ["new", "hot", "electronics"]
-        },
-        {
-            product_name: "Pseudo Shirt",
-            product_price: 29,
-            product_attributes: ["clothing", "sale"]
-        },
-        {
-            product_name: "Pseudo Mug",
-            product_price: 15,
-            product_attributes: ["home", "hot"]
-        }
-    ]
+    products = product_model.get_products()
 
     print "Available Products:"
 
