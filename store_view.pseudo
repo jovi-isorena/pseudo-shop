@@ -5,8 +5,46 @@
 
 print "Welcome to the Pseudo Shop!"
 
-# Display list of products from the storefront
-call display_products()
+# Prompt user to login or register
+print "Do you want to (1) Login or (2) Register?"
+
+user_choice = get user input
+
+if user_choice == 1:
+    # Show login screen
+    print "Login Screen"
+    
+    email = get user input for "Email:"
+    password = get user input for "Password:"
+    
+    is_authenticated =  user_controller.login_user(email, password)
+    
+    # Check if login was successful
+    if user is authenticated:
+        call display_products()
+    else:
+        print "Login failed. Please try again."
+
+elif user_choice == 2:
+    # Show registration screen
+    print "Registration Screen"
+    
+    name = get user input for "Name:"
+    email = get user input for "Email:"
+    password = get user input for "Password:"
+    
+    call user_controller.create_user(name, email, password)
+    
+    # Automatically login after registration
+    is_authenticated = user_controller.login_user(email, password)
+
+    if user is authenticated:
+        call display_products()
+    else:
+        print "Registration failed. Please try again."
+
+else:
+    print "Invalid option. Please restart the app."
 
 # Function to show all products with selected attributes
 function display_products():
