@@ -1,6 +1,62 @@
-print "Available products:"
+# Main entry point
 
-product_list = product_model.get_products()
+# This file ties together all components of the pseudo-shop
+# Simulates basic application flow
 
-for each item in product_list:
-    print "-" + item.name + item.brand"
+print "Welcome to the Pseudo Shop!"
+
+# Prompt user to login or register
+print "Do you want to (1) Login or (2) Register?"
+
+user_choice = get user input
+
+if user_choice == 1:
+    # Show login screen
+    print "Login Screen"
+    
+    email = get user input for "Email:"
+    password = get user input for "Password:"
+    
+    is_authenticated =  user_controller.login_user(email, password)
+    
+    # Check if login was successful
+    if user is authenticated:
+        call display_products()
+    else:
+        print "Login failed. Please try again."
+
+elif user_choice == 2:
+    # Show registration screen
+    print "Registration Screen"
+    
+    name = get user input for "Name:"
+    email = get user input for "Email:"
+    password = get user input for "Password:"
+    
+    call user_controller.create_user(name, email, password)
+    
+    # Automatically login after registration
+    is_authenticated = user_controller.login_user(email, password)
+
+    if user is authenticated:
+        call display_products()
+    else:
+        print "Registration failed. Please try again."
+
+else:
+    print "Invalid option. Please restart the app."
+
+# Function to show all products with selected attributes
+function display_products():
+    # List of product dictionaries with name, price, and attributes
+    products = product_model.get_products()
+
+    print "Available Products:"
+
+    for product in products:
+        print "Name:", product.name
+        print "Dimensions (W x H x L):", product.width, "x", product.height, "x", product.length
+        print "Weight:", product.weight, "kg"
+        print "Color:", product.color
+        print "Brand:", product.brand
+        print ""  # Spacer between products
