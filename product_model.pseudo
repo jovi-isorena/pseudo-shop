@@ -1,16 +1,37 @@
-# Handles product data
+class Product:
+    # Properties of a product
+    name: string
+    width: number
+    height: number
+    length: number
+    weight: number
+    color: string
+    brand: string
 
-# Sample structure:
-# product = {
-#     name: "Sample Product",
-#     width: 10,
-#     height: 5,
-#     length: 20,
-#     weight: 1.5,
-#     color: "red",
-#     brand: "Generic"
-# }
+products = array<Product>[]
 
-# Placeholder product list
-product_list = []
+function get_products():
+    // Returns the entire list of products.
+    return this.products
+    
+function add_product(name, width, height, length, weight, color, brand):
+  if name is empty or brand is empty:
+      print "Error: Product must have a name and brand."
+      return
+
+  if width ≤ 0 or height ≤ 0 or length ≤ 0 or weight ≤ 0:
+      print "Error: Dimensions and weight must be greater than zero."
+      return
+
+  product = {
+      name: name,
+      width: width,
+      height: height,
+      length: length,
+      weight: weight,
+      color: color,
+      brand: brand
+  }
+
+  append product to product_list
 
